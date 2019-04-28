@@ -14,3 +14,5 @@ Bei Aufgabe 2 besteht die Möglichkeit die Variable "iTransportIDAufgabe2" anzup
 Bei Aufgabe 3 besteht die Möglichkeit die Variable "iKunde" anzupassen, um so den jeweils ausgewählten Kunden zu ändern.
 
 Das Abfangen von Fehlern oder andere zusätzliche Features (z. B. eine verbesserte Logik zum Einlesen von *.csv Dateien) sind nicht mit implementiert. (in erster Linie aus zeitlichen Gründen)
+
+Das testdata.csv muss im Ordner \src abgelegt werden!
