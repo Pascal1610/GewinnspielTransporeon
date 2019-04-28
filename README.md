@@ -15,4 +15,4 @@ Bei Aufgabe 3 besteht die Möglichkeit die Variable "iKunde" anzupassen, um so d
 
 Das Abfangen von Fehlern oder andere zusätzliche Features (z. B. eine verbesserte Logik zum Einlesen von *.csv Dateien) sind nicht mit implementiert. (in erster Linie aus zeitlichen Gründen)
 
-Das testdata.csv muss im Ordner \src abgelegt werden!
+Die Testdaten Datei "testdata.csv" muss im Ordner \src abgelegt werden! (gleiche Ordnerstruktur wie geuploaded)
