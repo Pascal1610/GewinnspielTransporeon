@@ -1,0 +1,97 @@
+Testlauf ob meine Klassenstruktur funktioniert
+Transport; Lieferung; Von; Latitude; Longitude; Nach; Latitude; Longitude
+1; 1; TRANSPOREON GmbH,  Magirus-Deutz-Straße 16,  89077 Ulm,  Germany; 48.3988735; 9.956896; MERCAREON GmbH,  Pfarrer-Weiß-Weg 12,  89077 Ulm,  Germany; 48.395475; 9.9571223; 
+1; 2; MERCAREON GmbH,  Pfarrer-Weiß-Weg 12,  89077 Ulm,  Germany; 48.395475; 9.9571223; TRANSPOREON GmbH,  Chausseestraße 103,  10115 Berlin,  Germany; 52.5321176; 13.3786138; 
+1; 3; TICONTRACT GmbH,  Heisinger Straße 12,  87437 Kempten,  Germany; 47.7623819; 10.3285959; TRANSPOREON GmbH,  Chausseestraße 103,  10115 Berlin,  Germany; 52.5321176; 13.3786138; 
+2; 4; TRANSPOREON GmbH,  Magirus-Deutz-Straße 16,  89077 Ulm,  Germany; 48.3988735; 9.956896; TRANSPOREON Sp. z o. o.,  Kamieńskiego 47,  30-644 Kraków,  Poland; 50.0271684; 19.9615505; 
+3; 5; TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France; 48.8935711; 2.2344982; TRANSPOREON GmbH,  Chausseestraße 103,  10115 Berlin,  Germany; 52.5321176; 13.3786138; 
+3; 6; TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France; 48.8935711; 2.2344982; TICONTRACT GmbH,  Heisinger Straße 12,  87437 Kempten,  Germany; 47.7623819; 10.3285959; 
+3; 7; TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France; 48.8935711; 2.2344982; MERCAREON GmbH,  Pfarrer-Weiß-Weg 12,  89077 Ulm,  Germany; 48.395475; 9.9571223; 
+
+-----------------------------------------------------------------------
+**Aufgabe1: Berechnungen der Distanz Distanz zwischen Beladestelle und Entladestelle einer Lieferung**
+
+Distanz in Kilometer (Luftlinie, auf 3 Nachkommastellen gerundet)
+TransportID: 1; LieferungID: 1; Distanz: 0.378 km; (Kunde1ID: 1 Kunde1Index: 0); (Kunde2ID: 2 Kunde2Index: 1)
+TransportID: 1; LieferungID: 2; Distanz: 519.668 km; (Kunde1ID: 2 Kunde1Index: 1); (Kunde2ID: 3 Kunde2Index: 2)
+TransportID: 1; LieferungID: 3; Distanz: 573.012 km; (Kunde1ID: 4 Kunde1Index: 3); (Kunde2ID: 3 Kunde2Index: 2)
+TransportID: 2; LieferungID: 4; Distanz: 748.263 km; (Kunde1ID: 1 Kunde1Index: 0); (Kunde2ID: 5 Kunde2Index: 4)
+TransportID: 3; LieferungID: 5; Distanz: 881.474 km; (Kunde1ID: 6 Kunde1Index: 5); (Kunde2ID: 3 Kunde2Index: 2)
+TransportID: 3; LieferungID: 6; Distanz: 611.124 km; (Kunde1ID: 6 Kunde1Index: 5); (Kunde2ID: 4 Kunde2Index: 3)
+TransportID: 3; LieferungID: 7; Distanz: 569.799 km; (Kunde1ID: 6 Kunde1Index: 5); (Kunde2ID: 2 Kunde2Index: 1)
+
+-----------------------------------------------------------------------
+**Aufgabe2: Berechnungen der Distanz zwischen Ort der ersten Beladestell zu Ort der letzten Entladestelle eines Transportes**
+
+Transport ID: 3
+Erste Beladestelle:
+TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France
+Letzte Entladestelle:
+MERCAREON GmbH,  Pfarrer-Weiß-Weg 12,  89077 Ulm,  Germany
+Die Distanz beträgt 569.799 km. (Luftlinie, auf 3 Nachkommastellen gerundet)
+
+-----------------------------------------------------------------------
+**Aufgabe 3: Berechnungen der Gesamtdistanz aller Lieferungen eines Kunden**
+
+Mögliche Kunden ID von 1 bis 6
+Pro Lieferung gibt es zwei Kunden (Beladestelle und Entladestelle).
+Kommt eine Adresse mehrfach vor,
+dann zählt diese nur als ein Kunde!
+Kunde 6 ist ausgewählt.
+
+Kunde: TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France
+Verbindungen: 
+Von: TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France
+Zu: TRANSPOREON GmbH,  Chausseestraße 103,  10115 Berlin,  Germany
+Einzelne Strecke: 881.474 km
+
+Von: TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France
+Zu: TICONTRACT GmbH,  Heisinger Straße 12,  87437 Kempten,  Germany
+Einzelne Strecke: 611.124 km
+
+Von: TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France
+Zu: MERCAREON GmbH,  Pfarrer-Weiß-Weg 12,  89077 Ulm,  Germany
+Einzelne Strecke: 569.799 km
+
+Die Gesamt Distanz des Kunden beträgt: 2062.397 km
+
+-----------------------------------------------------------------------
+**Optimale Reihenfolge** (Bonus)
+Hinweis: Die Bonusaufgabe funktioniert NUR mit der Anzahl 7 bei Lieferungen!
+
+
+Annahmen:
+Die Verbindungen einer Lieferung sind fix.
+Der Weg ist keine Rundreise (keine Angabe); Start- und Endpunkt sind unterschiedlich
+Also Beladestelle zu Entladestelle.
+Es wird die Verbindung von einer Entladestelle zur nächsten Beladestelle optimiert.
+Die Summe der Kilometer setzt sich aus
+- der Summe der Lieferverbindungen (fix)
+- der Summe der Verbindungen zwischen den Lieferungen (zu optimieren)
+zusammen.
+
+Zur Rechnung:
+Reihenfolge (Beginn, wie in testdata.csv): 
+L1 L2 L3 L4 L5 L6 L7 
+Von L1 zu L2
+Von L2 zu L3
+Von L3 zu L4
+Von L4 zu L5
+Von L5 zu L6
+Von L6 zu L7
+Gesamtstrecke: 7772.937 km
+
+Reihenfolge (optimal, 7! Wege wurden berechnet & verglichen): 
+L7 L2 L6 L3 L5 L1 L4 
+Von L7 zu L2
+Von L2 zu L6
+Von L6 zu L3
+Von L3 zu L5
+Von L5 zu L1
+Von L1 zu L4
+Gesamtstrecke: 6186.380999999999 km
+
+Differenz / Ersparnis: 7772.937 km - 6186.380999999999 km = 1586.5560000000005 km
+
+
+-----------------------------------------------------------------------
