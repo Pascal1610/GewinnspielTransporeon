@@ -88,7 +88,21 @@ public class Transporeon{
 		System.out.println("Letzte Entladestelle:");
 		System.out.print(kunden.get((int)(distanceOfAToZ[1])-1).getName()+", ");
 		System.out.println(kunden.get((int)(distanceOfAToZ[1])-1).getAddressOneLine());
-		System.out.println("Die Distanz beträgt "+distanceOfAToZ[2]+" km. (Luftlinie, auf 3 Nachkommastellen gerundet)");
+		System.out.println("\nDie Distanz beträgt "+distanceOfAToZ[2]+" km. (Luftlinie von Ort der ersten Beladestelle zu Ort der letzten Entladestelle,\neines Transportes, auf 3 Nachkommastellen gerundet)\n");
+		System.out.println("Ergänzung:\nSollten stattdessen die einzelnen Distanzen zwischen den Lieferungen\nund die Distanzen der Lieferungen an sich addiert werden:\nDann wäre das Ergebnis:");
+		double sumAufgabe2=0;
+		double sumLieferungen=0;
+		double sumDistanzZwischenLieferungen=0;
+		//lieferungen Index = transporte.get(iTransportIDAufgabe2 ).deliveryOrder.get(i)[0]-1
+		
+		for(int i=0; i<(transporte.get(iTransportIDAufgabe2-1 ).deliveryOrder.size());i++) {
+			sumLieferungen += myCalc.calc(kunden, lieferungen.get(transporte.get(iTransportIDAufgabe2 -1).deliveryOrder.get(i)[0]-1).getLoadingCustomerId()-1, lieferungen.get(transporte.get(iTransportIDAufgabe2 -1).deliveryOrder.get(i)[0]-1).getUnloadingCustomerId()-1);
+		}
+		for(int i=1; i<(transporte.get(iTransportIDAufgabe2-1 ).deliveryOrder.size());i++) {
+			sumDistanzZwischenLieferungen += myCalc.calc(kunden, lieferungen.get(transporte.get(iTransportIDAufgabe2 -1).deliveryOrder.get(i-1)[0]-1).getUnloadingCustomerId()-1, lieferungen.get(transporte.get(iTransportIDAufgabe2 -1).deliveryOrder.get(i)[0]-1).getLoadingCustomerId()-1);
+		}
+		sumAufgabe2=sumLieferungen + sumDistanzZwischenLieferungen;
+		System.out.println("\nSumme der gesamten Distanz des Transportes mit der ID: "+iTransportIDAufgabe2+": " +sumAufgabe2+" km.");
 		}catch(Exception e){
 			System.out.println("Fehler bei Übergabeparametern in Aufgabe2!");
 		}
