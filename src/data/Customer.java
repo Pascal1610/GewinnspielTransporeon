@@ -13,7 +13,11 @@ public class Customer{
 	List <Integer[]> transportOrder = new ArrayList<Integer[]>();
 
 	public void setCustomerId(int id) {
+		try {
 		this.id = id;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von setCustomerId Ihres Customer-Objektes!");
+		}
 	}
 
 	public int getCustomerId() {
@@ -21,7 +25,11 @@ public class Customer{
 	}
 	
 	public void setINumTransporte(int iNumTransporte) {
+		try {
 		this.iNumTransporte = iNumTransporte;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von setINumTransporte Ihres Customer-Objektes!");
+		}
 	}
 
 	public int getINumTransporte() {
@@ -29,7 +37,11 @@ public class Customer{
 	}
 	
 	public void setName(String name) {
+		try {
 		this.name = name;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von setName Ihres Customer-Objektes!");
+		}
 	}
 
 	public String getName() {
@@ -45,9 +57,13 @@ public class Customer{
 	}
 	
 	public void setAddress(String street, String city, String country) {
+		try {
 		this.street=street;
 		this.city=city;
 		this.country=country;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von setAddress Ihres Customer-Objektes!");
+		}
 	}
 	
 	public void addTransportOrder() {
@@ -59,7 +75,11 @@ public class Customer{
 	}
 	
 	public void setLatitude(double latitude) {
+		try {
 		this.latitude=latitude;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von setLatitude Ihres Customer-Objektes!");
+		}
 	}
 	
 	public double getLatitude() {
@@ -67,7 +87,11 @@ public class Customer{
 	}
 	
 	public void setLongitude(double longitude) {
+		try {
 		this.longitude=longitude;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von setLongitude Ihres Customer-Objektes!");
+		}
 	}
 	
 	public double getLongitude() {
@@ -75,6 +99,7 @@ public class Customer{
 	}
 	
 	public int getTransportIdByDeliveryId(int iDeliveryId) {
+		try {
 	
 		this.iNumTransporte=this.transportOrder.size(); //sicherheitshalber aktualisieren
 		for(int i=0; i<this.iNumTransporte;i++) {
@@ -84,7 +109,13 @@ public class Customer{
 			}
 
 		}
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von getTransportIdByDeliveryId Ihres Customer-Objektes!");
+			return -1;
+		}
 		return -1;
+		
+		
 	}
 	
 }

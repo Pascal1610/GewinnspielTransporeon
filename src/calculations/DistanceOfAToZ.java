@@ -8,8 +8,9 @@ import data.Transport;
 
 public class DistanceOfAToZ{
 	public double[] calc(List <Delivery> lieferungen,List <Transport> transporte, int iTransportID) {
-		double[] dErg = new double[3];
 		
+		double[] dErg = new double[3];
+		try {
 		int iLastIndex=transporte.get(iTransportID-1).getDeliveryOrder().size()-1;
 		
 		//Lat lieferungen.get(transporte.get(iTransportID-1).getDeliveryOrder().get(0)[0]-1).getLoadingCoordinates()[0]
@@ -37,7 +38,10 @@ public class DistanceOfAToZ{
 		
 		return dErg;
 		
-		
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von calc Ihres DistanceOfAToZ-Objektes!");
+			return dErg;
+		}
 		
 
 			

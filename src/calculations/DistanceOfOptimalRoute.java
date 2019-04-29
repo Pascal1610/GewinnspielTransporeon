@@ -10,16 +10,23 @@ import data.Delivery;
 public class DistanceOfOptimalRoute{
 	
 	public Double [] schieben (Double [] ArrayOfDeliveryID) {
-		//
+		
+		try {
 		Double puffer=ArrayOfDeliveryID[6];
 		ArrayOfDeliveryID[6]=ArrayOfDeliveryID[5];
 		ArrayOfDeliveryID[5]=puffer;
 		
 		return ArrayOfDeliveryID;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von schieben Ihres DistanceOfOptimalRoute-Objektes!");
+			Double[] fehler = {};
+			return fehler;
+		}
 	}
 	
 	public Double[] tauschen (Double[] ArrayOfDeliveryID, int index, int add) {
 		//
+		try {
 		double puffer  = ArrayOfDeliveryID[index];
 		int tmpIndex=0;
 		for(int i=0;i<ArrayOfDeliveryID.length;i++) {
@@ -31,11 +38,17 @@ public class DistanceOfOptimalRoute{
 		ArrayOfDeliveryID[tmpIndex]=puffer;
 		
 		return ArrayOfDeliveryID;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von tauschen Ihres DistanceOfOptimalRoute-Objektes!");
+			Double[] fehler = {};
+			return fehler;
+		}
 	}
 	
 	
 	public List <Double> calc(List <Customer> kunden, List <Delivery> lieferungen) {
-		List <Double> optimalRoute = new ArrayList<Double>(); 
+		List <Double> optimalRoute = new ArrayList<Double>();
+		try {
 		List <Double> tmpOptimalRoute = new ArrayList<Double>(); 
 		DistanceOfDelivery myCalc = new DistanceOfDelivery();
 		
@@ -197,6 +210,11 @@ public class DistanceOfOptimalRoute{
 
 		
 		return optimalRoute;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von calc Ihres DistanceOfOptimalRoute-Objektes!");
+			optimalRoute.add(-1.0);
+			return optimalRoute;
+		}
 		
 	}
 	
