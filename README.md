@@ -10,7 +10,7 @@ Meine (notwendigen) Annahmen:
   - Es gibt keinen "Rundweg" => Start und Ziel können unterschiedlich sein (da keine Vorgabe)
 
 
-Die Bonusaufgabe funtkioniert nur mit einer Anzahl an Lieferungen von 7 (so wie die Testdaten). Werden Testdaten mit einer anderen Anzahl von Lieferungen verwendet, dann muss die Bonusaufgabe auskommentiert werden.
+Die Bonusaufgabe funtkioniert nur mit einer Anzahl an Lieferungen von 7 (so wie die Testdaten) ordnungsgemäß.
 
 Bei der ersten Berechnungsaufgabe geht meine Main Methode alle Lieferungen in einer For-Schleife durch.
 Bei Aufgabe 2 besteht die Möglichkeit die Variable "iTransportIDAufgabe2" anzupassen, um so den jeweils ausgewählten Transport zu ändern.
@@ -23,6 +23,3 @@ Genutzt Java Version: 11.0.1 64-bit
 Zusätzlicher Inhalt:
 - Eine Skizze, wie ich mir die Bonusaufgabe vorgestellt habe als .jpg
 - Eine Konsolenausgabe in einer .txt, Auszug aus meiner IDE
-
-Das Abfangen von Fehlern oder andere zusätzliche Features (z. B. eine verbesserte Logik zum Einlesen von *.csv Dateien) sind nicht mit implementiert. (in erster Linie aus zeitlichen Gründen)
-
