@@ -28,7 +28,16 @@ Erste Beladestelle:
 TRANSPOREON,  76 route de la Demi Lune,  92800 Puteaux,  France
 Letzte Entladestelle:
 MERCAREON GmbH,  Pfarrer-Weiß-Weg 12,  89077 Ulm,  Germany
-Die Distanz beträgt 569.799 km. (Luftlinie, auf 3 Nachkommastellen gerundet)
+
+Die Distanz beträgt 569.799 km. (Luftlinie von Ort der ersten Beladestelle zu Ort der letzten Entladestelle,
+eines Transportes, auf 3 Nachkommastellen gerundet)
+
+Ergänzung:
+Sollten stattdessen die einzelnen Distanzen zwischen den Lieferungen
+und die Distanzen der Lieferungen an sich addiert werden:
+Dann wäre das Ergebnis:
+
+Summe der gesamten Distanz des Transportes mit der ID: 3: 3554.995 km.
 
 -----------------------------------------------------------------------
 **Aufgabe 3: Berechnungen der Gesamtdistanz aller Lieferungen eines Kunden**
