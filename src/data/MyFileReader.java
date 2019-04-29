@@ -14,6 +14,7 @@ public class MyFileReader{
 	 * Gleichzeitig wird ggf. ein Index festgelegt.
 	 */
 	public boolean checkIfCustomerExists(List <Customer> kunden,  List <Customer> tmpKunden, int iCustomerIndex) {
+		try {
 		boolean check=false;
 		
 		for(int i=0; i<kunden.size();i++) {
@@ -28,10 +29,15 @@ public class MyFileReader{
 		}
 		
 		return check;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von checkIfCustomerExists Ihres MyFileReader-Objektes!");
+			return false;
+		}
 		
 	}
 	
 	public boolean checkIfTransportExists(List <Transport> transporte, int iTransportId) {
+		try {
 		boolean check=false;
 		for(int i=0; i<transporte.size();i++) {
 			if(transporte.get(i).getTransportId() == iTransportId) {
@@ -40,9 +46,14 @@ public class MyFileReader{
 			}
 		}
 		return check;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von checkIfTransportExists Ihres MyFileReader-Objektes!");
+			return false;
+		}
 	}	
 	
 	public boolean checkIfDeliveryExists(List <Delivery> lieferungen, int iDeliveryId) {
+		try {
 		boolean check=false;
 		for(int i=0; i<lieferungen.size();i++) {
 			if(lieferungen.get(i).getDeliveryId()== iDeliveryId) {
@@ -52,10 +63,15 @@ public class MyFileReader{
 		}
 		
 		return check;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von checkIfDeliveryExists Ihres MyFileReader-Objektes!");
+			return false;
+		}
 	}
 	
 	
 	public void readIn (List <Customer> kunden, List <Transport> transporte, List <Delivery> lieferungen ) {
+		try {
 		//Logik zum einlesen
 		//temporäre Listen zum arbeiten als eine Art Puffer.
 		BufferedReader read = null;
@@ -229,6 +245,11 @@ public class MyFileReader{
 			}catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
+		
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von readIn Ihres MyFileReader-Objektes!");
+			
 		}
 	
 	}

@@ -12,9 +12,10 @@ public class DistanceOfDelivery{
 		 * habe ich mir den Code auf der Seite https://www.geodatasource.com/developers/java
 		 * zur Hilfe genommen und für meine Bedürfnisse angepasst.
 		 */
-		
+		double dist=-1;
+		try {
 		double theta = kunden.get(iCustomer1Index).getLongitude() - kunden.get(iCustomer2Index).getLongitude();
-		double dist = Math.sin(Math.toRadians(kunden.get(iCustomer1Index).getLatitude())) * Math.sin(Math.toRadians(kunden.get(iCustomer2Index).getLatitude())) + Math.cos(Math.toRadians(kunden.get(iCustomer1Index).getLatitude())) * Math.cos(Math.toRadians(kunden.get(iCustomer2Index).getLatitude())) * Math.cos(Math.toRadians(theta));
+		dist = Math.sin(Math.toRadians(kunden.get(iCustomer1Index).getLatitude())) * Math.sin(Math.toRadians(kunden.get(iCustomer2Index).getLatitude())) + Math.cos(Math.toRadians(kunden.get(iCustomer1Index).getLatitude())) * Math.cos(Math.toRadians(kunden.get(iCustomer2Index).getLatitude())) * Math.cos(Math.toRadians(theta));
 		dist = Math.acos(dist);
 		dist = Math.toDegrees(dist);
 		dist = dist * 60 * 1.1515;
@@ -23,6 +24,10 @@ public class DistanceOfDelivery{
 		String sDouble = String.format(Locale.ENGLISH, "%.3f",dist);
 		dist = Double.parseDouble(sDouble);
 		return dist;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von calc Ihres DistanceOfDelivery-Objektes!");
+			return dist;
+		}
 		
 	}
 }

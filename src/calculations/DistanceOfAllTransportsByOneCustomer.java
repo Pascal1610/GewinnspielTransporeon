@@ -10,9 +10,10 @@ public class DistanceOfAllTransportsByOneCustomer{
 	public double calc(List <Customer> kunden, int iCustomerID, List<Delivery> lieferungen) {
 		//Zuerst die iDeliveryId´s des Kunden ermitteln.
 		//Dann die Ausrechnen und addieren.
-		
-		List <Integer[]> listOfDeliveries = kunden.get(iCustomerID-1).getTransportOrder();
 		double erg=0;
+		try {
+		List <Integer[]> listOfDeliveries = kunden.get(iCustomerID-1).getTransportOrder();
+		
 	
 		for(int i=0; i<listOfDeliveries.size();i++) {
 			
@@ -37,6 +38,11 @@ public class DistanceOfAllTransportsByOneCustomer{
 		erg = Double.parseDouble(sDouble);
 
 		return erg;
+		}catch(Exception e) {
+			System.out.println("Überprüfen Sie die Übergabeparameter bei Ihrerem Aufruf von calc Ihres DistanceOfAllTransportsByOneCustomer-Objektes!");
+			erg=-1;
+			return erg;
+		}
 		
 	}
 }

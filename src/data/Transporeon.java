@@ -13,7 +13,7 @@ public class Transporeon{
 		
 		//Alternativ könnte man hier auch manuell Kunden erstellen
 		myInput.readIn(kunden,transporte,lieferungen);
-		
+		try {
 		System.out.println("Testlauf ob meine Klassenstruktur funktioniert");
 		System.out.println("Transport; Lieferung; Von; Latitude; Longitude; Nach; Latitude; Longitude");
 		for(int i=0; i<lieferungen.size();i++){
@@ -32,11 +32,16 @@ public class Transporeon{
 				System.out.print(kunden.get(lieferungen.get(i).getUnloadingCustomerId()-1).getLongitude() +"; ");
 				System.out.println();
 		}
+		}catch(Exception e){
+			System.out.println("Fehler bei Übergabeparametern in Testlauf!");
+		}
 		
 		System.out.println("\n-----------------------------------------------------------------------");
 		
 		System.out.println("**Aufgabe1: Berechnungen der Distanz Distanz zwischen Beladestelle und Entladestelle einer Lieferung**\n");
 		DistanceOfDelivery myCalc = new DistanceOfDelivery();
+		try {
+		
 		
 		System.out.println("Distanz in Kilometer (Luftlinie, auf 3 Nachkommastellen gerundet)");
 		for(int i=0; i<lieferungen.size();i++){
@@ -56,10 +61,13 @@ public class Transporeon{
 			System.out.print("(Kunde2ID: "+lieferungen.get(i).getUnloadingCustomerId() + " Kunde2Index: "+(lieferungen.get(i).getUnloadingCustomerId()-1)+")");
 			System.out.println();
 		}
-		
+		}catch(Exception e){
+			System.out.println("Fehler bei Übergabeparametern in Aufgabe1!");
+		}
 		System.out.println("\n-----------------------------------------------------------------------");
 		System.out.println("**Aufgabe2: Berechnungen der Distanz zwischen Ort der ersten Beladestell zu Ort der letzten Entladestelle eines Transportes**\n");
 	
+		try {
 		DistanceOfAToZ myCalcAToZ = new DistanceOfAToZ();
 		
 		/*
@@ -81,10 +89,12 @@ public class Transporeon{
 		System.out.print(kunden.get((int)(distanceOfAToZ[1])-1).getName()+", ");
 		System.out.println(kunden.get((int)(distanceOfAToZ[1])-1).getAddressOneLine());
 		System.out.println("Die Distanz beträgt "+distanceOfAToZ[2]+" km. (Luftlinie, auf 3 Nachkommastellen gerundet)");
-		
+		}catch(Exception e){
+			System.out.println("Fehler bei Übergabeparametern in Aufgabe2!");
+		}
 		System.out.println("\n-----------------------------------------------------------------------");
-		
 		System.out.println("**Aufgabe 3: Berechnungen der Gesamtdistanz aller Lieferungen eines Kunden**\n");
+		try {
 		System.out.println("Mögliche Kunden ID von 1 bis "+(kunden.size())+ "\nPro Lieferung gibt es zwei Kunden (Beladestelle und Entladestelle).\nKommt eine Adresse mehrfach vor,\ndann zählt diese nur als ein Kunde!");
 		
 		DistanceOfAllTransportsByOneCustomer myCalcATBOC = new DistanceOfAllTransportsByOneCustomer();
@@ -113,20 +123,23 @@ public class Transporeon{
 			System.out.println("");
 		}
 		System.out.println("Die Gesamt Distanz des Kunden beträgt: "+sum+" km");
-		
+		}catch(Exception e){
+			System.out.println("Fehler bei Übergabeparametern in Aufgabe3!");
+		}
 		System.out.println("\n-----------------------------------------------------------------------");
 		DistanceOfOptimalRoute myCalcOptimalRoute = new DistanceOfOptimalRoute();
 		System.out.println("**Optimale Reihenfolge** (Bonus)");
+		try {
 		System.out.println("Hinweis: Die Bonusaufgabe funktioniert NUR mit der Anzahl 7 bei Lieferungen!\n");
 		/*
 		 * Hinweis: Die Bonusaufgabe funktioniert NUR mit der Anzahl 7 bei Lieferungen. 
-		 * Wenn andere Testdaten eingelesen werden, mit mehr oder weniger Lieferungen, 
-		 * dann muss die Bonusaufgabe auskommentiert werden!
 		 */
 		System.out.println("\nAnnahmen:\nDie Verbindungen einer Lieferung sind fix.\nDer Weg ist keine Rundreise (keine Angabe); Start- und Endpunkt sind unterschiedlich\nAlso Beladestelle zu Entladestelle.\nEs wird die Verbindung von einer Entladestelle zur nächsten Beladestelle optimiert.\nDie Summe der Kilometer setzt sich aus\n- der Summe der Lieferverbindungen (fix)\n- der Summe der Verbindungen zwischen den Lieferungen (zu optimieren)\nzusammen.\n");
 		System.out.println("Zur Rechnung:");
 		myCalcOptimalRoute.calc(kunden, lieferungen);
-		
+		}catch(Exception e){
+			System.out.println("Fehler bei Übergabeparametern in Bonusaufgabe!");
+		}
 		System.out.println("\n-----------------------------------------------------------------------");
 	}
 }
