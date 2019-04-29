@@ -12,9 +12,9 @@ Meine (notwendigen) Annahmen:
 
 Die Bonusaufgabe funtkioniert nur mit einer Anzahl an Lieferungen von 7 (so wie die Testdaten) ordnungsgemäß.
 
-Bei der ersten Berechnungsaufgabe geht meine Main Methode alle Lieferungen in einer For-Schleife durch.
-Bei Aufgabe 2 besteht die Möglichkeit die Variable "iTransportIDAufgabe2" anzupassen, um so den jeweils ausgewählten Transport zu ändern.
-Bei Aufgabe 3 besteht die Möglichkeit die Variable "iKunde" anzupassen, um so den jeweils ausgewählten Kunden zu ändern.
+- Bei der ersten Berechnungsaufgabe geht meine Main Methode alle Lieferungen in einer For-Schleife durch.
+- Bei Aufgabe 2 besteht die Möglichkeit die Variable "iTransportIDAufgabe2" anzupassen, um so den jeweils ausgewählten Transport zu ändern.
+- Bei Aufgabe 3 besteht die Möglichkeit die Variable "iKunde" anzupassen, um so den jeweils ausgewählten Kunden zu ändern.
 
 Die Testdaten Datei "testdata.csv" muss im Ordner \src abgelegt werden! (gleiche Ordnerstruktur wie geuploaded)
 
